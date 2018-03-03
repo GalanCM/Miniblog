@@ -59,7 +59,8 @@ export default class extends React.Component {
       },
       selectLabel: {
         margin: "15px 0 -10px 15px",
-        display: "inline-block"
+        display: "inline-block",
+        fontWeight: 600
       },
       fileSelect: {
         margin: "15px 0 10px 10px",
