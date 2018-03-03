@@ -22,8 +22,7 @@ export default class extends React.Component {
     this.styles = {
       wrapper: {
         display: "flex",
-        flexDirection: "column",
-        backgroundColor: "#aaaabb"
+        flexDirection: "column"
       },
       showButton: {
         width: "90%",
@@ -34,13 +33,13 @@ export default class extends React.Component {
         padding: "10px 0",
         fontWeight: 600,
         backgroundColor: "rgb(0, 64, 128)",
-        margin: "10px auto",
+        margin: "10px auto 0",
         cursor: "pointer",
         boxShadow: "2px 2px 3px rgba(0,0,3,0.35 )",
         transition: "filter 0.2s ease-in",
         ":hover": { filter: "brightness(1.3)" }
       },
-      codeWrapper: {
+      modal: {
         position: "fixed",
         top: "0px",
         left: "0px",
@@ -49,11 +48,22 @@ export default class extends React.Component {
         height: "calc( 100vh - 60px )",
         margin: "30px",
         borderRadius: "3px",
-        boxShadow: "0px 0px 6px rgba(0,0,0,1 )"
+        boxShadow: "0px 0px 6px rgba(0,0,0,1)"
+      },
+      header: {
+        backgroundColor: "#ddddee",
+        display: "flex"
+      },
+      selectWrapper: {
+        maxWidth: "calc(100% - 53px)"
+      },
+      selectLabel: {
+        margin: "15px 0 -10px 15px",
+        display: "inline-block"
       },
       fileSelect: {
-        margin: "15px 0 -6px 10px",
-        maxWidth: "calc(100% - 60px)"
+        margin: "15px 0 10px 10px",
+        maxWidth: "100%"
       },
       hideButton: {
         float: "right",
@@ -63,8 +73,9 @@ export default class extends React.Component {
         border: "none",
         cursor: "pointer",
         color: "#555",
-        margin: "5px",
         transition: "color 0.2s ease-in",
+        margin: "auto 0 auto auto",
+
         ":hover": { color: "#111" }
       },
       code: {
@@ -115,28 +126,33 @@ export default class extends React.Component {
   render() {
     // template for the code modal
     let code_modal = (
-      <section style={this.styles.codeWrapper}>
-        {/* select for choosing the file to display */}
-        <select
-          style={this.styles.fileSelect}
-          value={this.state.current_file}
-          onChange={event =>
-            this.setState({ current_file: event.target.value })
-          }
-        >
-          {Object.keys(this.state.files).map((name, i) => {
-            return <option key={i}>{name}</option>;
-          })}
-        </select>
+      <section style={this.styles.modal}>
+        <header style={this.styles.header}>
+          {/* select for choosing the file to display */}
+          <div style={this.styles.selectWrapper}>
+            <span style={this.styles.selectLabel}>View file:</span>
+            <select
+              style={this.styles.fileSelect}
+              value={this.state.current_file}
+              onChange={event =>
+                this.setState({ current_file: event.target.value })
+              }
+            >
+              {Object.keys(this.state.files).map((name, i) => {
+                return <option key={i}>{name}</option>;
+              })}
+            </select>
+          </div>
 
-        {/* close button */}
-        <button
-          style={this.styles.hideButton}
-          onClick={event => this.setState({ showModal: false })}
-          key={"hideButton"}
-        >
-          ✕
-        </button>
+          {/* close button */}
+          <button
+            style={this.styles.hideButton}
+            onClick={event => this.setState({ showModal: false })}
+            key={"hideButton"}
+          >
+            ✕
+          </button>
+        </header>
 
         {/* the code */}
         <div style={this.styles.code}>

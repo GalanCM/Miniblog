@@ -80,6 +80,11 @@ class App extends React.Component {
         }
       },
 
+      spacer: {
+        backgroundColor: '#aaaabb',
+        height: '20px'
+      },
+
       intro: {
         padding: "0 50px",
         display: "flex",
@@ -129,6 +134,8 @@ class App extends React.Component {
             <span style={this.styles.version.selector}>React</span>
           </span>
         </nav>
+
+        <div style={this.styles.spacer}></div>
 
         {/* code viewer */}
         <CodeViewer />

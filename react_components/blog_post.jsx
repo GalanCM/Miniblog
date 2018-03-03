@@ -25,12 +25,11 @@ export default class extends React.Component {
         fontFamily: "Raleway, Helvetica, sans-serif",
         fontWeight: 700,
         fontSize: "30px",
-        margin: "0px 0px 0px -15px"
+        margin: "0 0 15px"
       },
       date: {
         fontSize: "18px",
         fontWeight: 200,
-        opacity: 0.6,
         marginBottom: "-6px"
       }
     };
