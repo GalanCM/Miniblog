@@ -11,7 +11,7 @@ var config = {
     filename: "react.js"
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?/,
         include: APP_DIR,
