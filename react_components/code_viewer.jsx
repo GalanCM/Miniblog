@@ -19,6 +19,17 @@ export default class extends React.Component {
       current_file: "react_components/index.jsx" // name of the file currently being displayed
     };
 
+    var buttonInKeyframes = Radium.keyframes({
+      'from': {
+        transform: 'scaleY(0)',
+        opacity: 0
+      },
+      'to': {
+        transform: 'scaleY(1)',
+        opacity: 1
+      }
+    }, 'buttonIn')
+
     this.styles = {
       wrapper: {
         display: "flex",
@@ -28,16 +39,22 @@ export default class extends React.Component {
         width: "90%",
         fontSize: "30px",
         border: "none",
-        borderRadius: 0,
-        color: "#eee",
+        borderRadius: '2px',
+        color: "#fff",
         padding: "10px 0",
         fontWeight: 600,
-        backgroundColor: "rgb(0, 64, 128)",
+        backgroundColor: "rgb(0, 74, 138)",
         margin: "10px auto 0",
         cursor: "pointer",
-        boxShadow: "2px 2px 3px rgba(0,0,3,0.35 )",
-        transition: "filter 0.2s ease-in",
-        ":hover": { filter: "brightness(1.3)" }
+        transform: 'scaleY(0)',
+        animation: "x 300ms ease-out 700ms forwards",
+        animationName: buttonInKeyframes,
+
+        ":hover": {
+          transition: '200ms background-color ease-out, 200ms text-shadow ease-out',
+          textShadow: "0px 0px 1px rgba(0,0,3,0.5)",
+          backgroundColor: 'rgb(0, 54, 118)',
+        }
       },
       modal: {
         position: "fixed",
@@ -74,7 +91,7 @@ export default class extends React.Component {
         border: "none",
         cursor: "pointer",
         color: "#555",
-        transition: "color 0.2s ease-in",
+        transition: "color 0.3s ease-out",
         margin: "auto 0 auto auto",
 
         ":hover": { color: "#111" }
@@ -163,7 +180,7 @@ export default class extends React.Component {
     );
 
     return (
-      <div style={this.styles.wrapper}>
+      <section style={this.styles.wrapper}>
         {/* Show Code button */}
         <button
           style={this.styles.showButton}
@@ -175,7 +192,7 @@ export default class extends React.Component {
 
         {/* the modal */}
         {this.state.showModal ? code_modal : ""}
-      </div>
+      </section>
     );
   }
 }

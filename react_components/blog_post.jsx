@@ -39,12 +39,12 @@ export default class extends React.Component {
     return (
       <article style={this.styles.article}>
         {/* date and time */}
-        <h1 style={this.styles.header}>
+        <header style={this.styles.header}>
           <div style={this.styles.date}>
             {this.props.details.date.toLocaleDateString("en-US")}
           </div>
           {this.props.details.title}
-        </h1>
+        </header>
 
         {/* body of the post */}
         <main

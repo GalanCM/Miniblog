@@ -142,7 +142,9 @@ class App extends React.Component {
 
         {/* intro */}
         <section style={this.styles.intro}>
-          <h1 style={this.styles.introHeader}>Welcome to my code sample</h1>
+          <header style={this.styles.introHeader}>
+            <h1>Welcome to my code sample</h1>
+          </header>
           <div style={this.styles.introText}>
             <p>
               This Miniblog is intended for potential clients and employers who
