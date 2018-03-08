@@ -28,8 +28,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "dev": "./node_modules/.bin/webpack --watch --mode=development",
-    "build": "/node_modules/.bin/webpack --mode=production"
+    "dev": "node_modules/.bin/webpack --watch --mode=development",
+    "build": "node_modules/.bin/webpack --mode=production"
   },
   "author": "",
   "license": "ISC"
