@@ -1,6 +1,13 @@
 {
   "presets": [
-    "es2016",
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": "last 2 versions, > 5%"
+        }
+      }
+    ],
     "react",
     "stage-0"
   ],
