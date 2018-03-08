@@ -19,16 +19,19 @@ export default class extends React.Component {
       current_file: "react_components/index.jsx" // name of the file currently being displayed
     };
 
-    var buttonInKeyframes = Radium.keyframes({
-      'from': {
-        transform: 'scaleY(0)',
-        opacity: 0
+    var buttonInKeyframes = Radium.keyframes(
+      {
+        from: {
+          transform: "scaleY(0)",
+          opacity: 0
+        },
+        to: {
+          transform: "scaleY(1)",
+          opacity: 1
+        }
       },
-      'to': {
-        transform: 'scaleY(1)',
-        opacity: 1
-      }
-    }, 'buttonIn')
+      "buttonIn"
+    );
 
     this.styles = {
       wrapper: {
@@ -39,21 +42,22 @@ export default class extends React.Component {
         width: "90%",
         fontSize: "30px",
         border: "none",
-        borderRadius: '2px',
+        borderRadius: "2px",
         color: "#fff",
         padding: "10px 0",
         fontWeight: 600,
         backgroundColor: "rgb(0, 74, 138)",
         margin: "10px auto 0",
         cursor: "pointer",
-        transform: 'scaleY(0)',
+        transform: "scaleY(0)",
         animation: "x 300ms ease-out 700ms forwards",
         animationName: buttonInKeyframes,
 
         ":hover": {
-          transition: '200ms background-color ease-out, 200ms text-shadow ease-out',
+          transition:
+            "200ms background-color ease-out, 200ms text-shadow ease-out",
           textShadow: "0px 0px 1px rgba(0,0,3,0.5)",
-          backgroundColor: 'rgb(0, 54, 118)',
+          backgroundColor: "rgb(0, 54, 118)"
         }
       },
       modal: {
@@ -105,8 +109,12 @@ export default class extends React.Component {
         borderRadius: "3px",
         backgroundColor: "#001b36",
         color: "#eee",
-        height: "calc(100% - 90px)",
-        overflow: "scroll"
+        height: "calc(100% - 110px)",
+        overflow: "scroll",
+
+        "@media screen and (orientation:portrait)": {
+          height: "calc(100% - 140px)"
+        }
       }
     };
   }
