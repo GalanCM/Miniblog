@@ -1,5 +1,7 @@
 # Miniblog
-I built this as a React code sample in early 2018. The original intent was to keep the blog very simple, and replicate it in various frameworks: React, Vue, Angular, Ember, Svelte, ect… In the end, I decided it was a better use of my time to build a more complex sample app instead. I'd still like to go back to this and implement a proper backend, but I have other priorities at the moment.
+I built this as a React code sample in early 2018. You can see it in action at https://www.galan-montgomery.com/miniblog/.
+
+The original intent was to keep the blog very simple, and replicate it in various frameworks: React, Vue, Angular, Ember, Svelte, ect… In the end, I decided it was a better use of my time to build a more complex sample app instead. I'd still like to go back to this and implement a proper backend, but I have other priorities at the moment.
 
 # Downloading
 Before downloading make sure you have [Node](http://www.nodejs.org) and [Git](http://www.git-scm.com) installed on your machine.
